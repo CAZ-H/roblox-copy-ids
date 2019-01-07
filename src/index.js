@@ -13,12 +13,14 @@ chrome.contextMenus.onClicked.addListener(function(info) {
         const URL = info.linkUrl;
         const ID = URL.match(/(?<=\/)([0-9]+)/g);
 
-        let tempCopyInput = document.createElement("textarea");
-        tempCopyInput.textContent = ID;
-        document.body.appendChild(tempCopyInput);
-        tempCopyInput.select();
-        document.execCommand('copy');
-        tempCopyInput.blur();
-        document.body.removeChild(tempCopyInput);
+        if (ID) {
+            let tempCopyInput = document.createElement("textarea");
+            tempCopyInput.textContent = ID;
+            document.body.appendChild(tempCopyInput);
+            tempCopyInput.select();
+            document.execCommand('copy');
+            tempCopyInput.blur();
+            document.body.removeChild(tempCopyInput);
+        }
     }
 });
