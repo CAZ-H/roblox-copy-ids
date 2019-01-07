@@ -11,11 +11,19 @@ chrome.runtime.onInstalled.addListener(function() {
 chrome.contextMenus.onClicked.addListener(function(info) {
     if (info.menuItemId === "CopyID"){
         const URL = info.linkUrl;
-        const ID = URL.match(/(?<=\/)([0-9]+)/g);
 
+        // General case
+        let ID = URL.match(/(?<=\/)([0-9]+)/g);
+
+        // Games page
+        if (!ID) {
+            ID = URL.match(/(?<=PlaceId=)([0-9]+)/);
+        }
+
+        // Copy to clipboard
         if (ID) {
             let tempCopyInput = document.createElement("textarea");
-            tempCopyInput.textContent = ID;
+            tempCopyInput.textContent = ID[0];
             document.body.appendChild(tempCopyInput);
             tempCopyInput.select();
             document.execCommand('copy');

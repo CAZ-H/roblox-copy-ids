@@ -2,8 +2,9 @@
   "name": "Quick Copy Roblox IDs",
   "short_name": "Quick Copy Ro-IDs",
   "version": "1.0",
-  "description": "Right click context menu on roblox.com for quickly copying asset and user IDs",
+  "description": "Adds a right click context menu item on https://www.roblox.com for quickly copying asset and user IDs.",
   "manifest_version": 2,
+  "incognito": "split",
   "icons": {
     "128": "img/icon_128.png",
     "48": "img/icon_48.png",
