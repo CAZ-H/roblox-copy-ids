@@ -13,11 +13,16 @@ chrome.contextMenus.onClicked.addListener(function(info) {
         const URL = info.linkUrl;
 
         // General case
-        let ID = URL.match(/(?<=\/)([0-9]+)/g);
+        let ID = URL.match(/(?<=\/)([0-9]+)/gi);
 
-        // Games page
+        // Games
         if (!ID) {
-            ID = URL.match(/(?<=PlaceId=)([0-9]+)/);
+            ID = URL.match(/(?<=PlaceId=)([0-9]+)/gi);
+        }
+
+        // Groups
+        if (!ID) {
+            ID = URL.match(/(?<=gid=)([0-9]+)/gi);
         }
 
         // Copy to clipboard
