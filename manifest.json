@@ -1,7 +1,7 @@
 {
   "name": "Quick Copy Roblox IDs",
   "short_name": "Quick Copy Ro-IDs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Adds a right click context menu item on https://www.roblox.com for quickly copying asset and user IDs.",
   "manifest_version": 2,
   "incognito": "split",
